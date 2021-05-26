@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+    {% block html_head %}{% endblock %}
+  </head>
+
+  <body>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">8D Wellness Club</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav ml-auto">
+            {% set navbar_menus = [ ('/', 'home', 'Home'), ('/evidence',
+            'evidence', 'Evidence'), ('/activity',
+            'activity', 'Activity'), ('/community', 'community',
+            'Community'), ('/progress', 'progress', 'Progress'), ('/about', 'about', 'About')] -%} 
+            <!-- Set active page to style active menu automatically -->
+            {% set active_page = active_page|default('home') -%} 
+            {% for href, id, caption in navbar_menus %}
+              <li class="nav-item">
+                <a
+                  class="nav-link {% if id == active_page %} active {% endif%}"
+                  href="{{ href }}"
+                >
+                {{ caption }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron" style = "background-image:url({{jumbotron.bg_image}})">
+        <h1 class="display-4">{{jumbotron.header}}</h1>
+        <p class = "lead">{{jumbotron.text}} </p>
+        <!-- <p class = "lead">P.S. We use a db to store your info.</p>
+
+        <hr class="my-4">
+        <p>Stay healthy, have a happy and long life!</p> -->
+      </div>
+
+    <!-- <div class="jumbotron h-25" 
+    style = "background-image:url({{jumbotron.bg_image}})">
+        
+        <h1 class="display-4">{{jumbotron.header}}</h1>
+        <p class = "lead">{{jumbotron.text}}  </p>
+        <hr class="my-4">
+        <h5></h5>
+        <p class="card-text"><small class="text-muted align-text-bottom"></small></p>
+    </div>
+     -->
+    <!-- Cooperator just need to update the following part based on aggreement on base.html -->
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+  
+   
+  </body>
+  </body>
+
+  <div class = "fixed-bottom">
+    <p class="text-center">@8D Wellness Club since May, 2021.</p>
+  </div>
+</html>
