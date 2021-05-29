@@ -1,0 +1,77 @@
+from flask import Flask, render_template
+from flask import url_for
+from .commands import create_tables
+from .extensions import login_manager, db
+from .models import User
+from .routes.auth import auth
+#from .routes.main import main
+
+config_file = 'settings.py'
+app = Flask(__name__)
+app.config.from_pyfile(config_file)
+db.init_app(app)
+login_manager.init_app(app)
+login_manager.login_view = 'auth.login'
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
+#app.register_blueprint(main)
+app.register_blueprint(auth)
+
+app.cli.add_command(create_tables)
+
+@app.route('/')
+@app.route('/home')
+def home():
+    # Kwargs store data to render on template
+    kwargs = {
+        'title': 'Home',
+        'jumbotron': {
+            "header": "Welcome to 8D Wellness Club!",
+            # To choose bg images
+            "bg_image": url_for('static', filename='/images/'),
+            "text": "Act now for your wellness. "
+        },
+        'homePageContents': [{
+            'Title': "What is wellness",
+            "Text": "Wellness is a state beyond absence of illness but rather aims to optimize well-being.The notions behind the term share the same roots as the alternative medicine movement, in 19th-century movements in the US and Europe that sought to optimize health and to consider the whole person, like New Thought, Christian Science, and Lebensreform.The term wellness has also been misused for pseudoscientific health interventions.[4]",
+            "imagePath": url_for('static', filename='/images/Eight_Dimensions_of_Wellness.png'),
+            "Link": "/styletransfer",
+            "Action": "+ The science behind it"
+        },
+
+        ]
+    }
+    return render_template('home.html', **kwargs)
+
+@app.route('/about')
+def about():
+    kwargs = {
+        'title': 'About',
+        'jumbotron': {
+            "header": "mHealth & Human",
+            "bg_image": "static/images/1182_650_gallery.jpeg",
+            "text": ""
+        },
+        'aboutPageContents': [{
+            'Title': "Responsibility when providing health related content online",
+            "Text": " "
+
+        },
+            {
+            "Title": "Aware: technology is only small part in health care system, human play much larger role in health care procedure",
+            "Text": " "
+
+        },
+            {
+            "Title": "Be patient, it takes time!",
+            "Text": ""
+
+        }
+        ]
+    }
+    return render_template('about.html', **kwargs)
+
+if __name__ == '__main__':
+    app.run(threaded=True, port=5000)
