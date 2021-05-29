@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import current_user, login_required
 
-from .extensions import db
+from wellness.extensions import db
 #from ..models import Question, User
 
 main = Blueprint('main', __name__)

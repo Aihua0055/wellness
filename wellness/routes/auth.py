@@ -2,8 +2,8 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_user, logout_user
 from werkzeug.security import check_password_hash
 
-from .extensions import db
-from .models import User
+from wellness.extensions import db
+from wellness.models import User
 
 auth = Blueprint('auth', __name__)
 
