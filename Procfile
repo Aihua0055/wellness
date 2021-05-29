@@ -1,1 +1,1 @@
-web: gunicorn __init__:app
+web: gunicorn --chdir wellness __init__:app
