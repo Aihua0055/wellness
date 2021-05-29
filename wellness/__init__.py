@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask import url_for
 from commands import create_tables
-from extensions import login_manager, db
+from extensions import db, login_manager
 from models import User
 from routes.auth import auth
 from routes.main import main
