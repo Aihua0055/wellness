@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 from flask import url_for
-from .commands import create_tables
-from .extensions import login_manager, db
-from .models import User
-from .routes.auth import auth
-from .routes.main import main
+from commands import create_tables
+from extensions import login_manager, db
+from models import User
+from routes.auth import auth
+from routes.main import main
 
 def create_app(config_file = 'settings.py'):
     app = Flask(__name__)
