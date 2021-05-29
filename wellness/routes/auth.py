@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_user, logout_user
 from werkzeug.security import check_password_hash
-from wellness.extensions import db
+#from wellness.extensions import db
 from wellness.models import User
 
 auth = Blueprint('auth', __name__)
@@ -19,8 +19,8 @@ def register():
             expert=False
         )
 
-        db.session.add(user)
-        db.session.commit()
+        #db.session.add(user)
+        #db.session.commit()
 
         return redirect(url_for('auth.login'))
 
