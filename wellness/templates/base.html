@@ -27,7 +27,8 @@
             {% set navbar_menus = [ ('/', 'home', 'Home'), ('/evidence',
             'evidence', 'Evidence'), ('/activity',
             'activity', 'Activity'), ('/community', 'community',
-            'Community'), ('/progress', 'progress', 'Progress'), ('/about', 'about', 'About')] -%} 
+            'Community'), ('/progress', 'progress', 'Progress'), ('/about', 'about', 'About'), 
+            ('/register', 'register', 'Register'), ('/login', 'login', 'Login'), ('/logout', 'logout', 'Logout')] -%} 
             <!-- Set active page to style active menu automatically -->
             {% set active_page = active_page|default('home') -%} 
             {% for href, id, caption in navbar_menus %}

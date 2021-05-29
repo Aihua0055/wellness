@@ -55,8 +55,19 @@ def login():
         if not error_message:
             login_user(user)
             return redirect(url_for('main.index'))
+    kwargs = {
+        'title': 'Login',
+        'jumbotron': {
+            "header": "Log into your account!",
+            "text": "Act now for your wellness. "
+        },
+        'loginPageContents': [{
+            'Title': "Login"
+        },
 
-    return render_template('login.html')
+        ]
+    }
+    return render_template('login.html', **kwargs)
 
 @auth.route('/logout')
 def logout():
