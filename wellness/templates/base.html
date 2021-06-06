@@ -24,11 +24,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav ml-auto">
+            {% if current_user and current_user.is_authenticated %}
             {% set navbar_menus = [ ('/', 'home', 'Home'), ('/evidence',
             'evidence', 'Evidence'), ('/activity',
             'activity', 'Activity'), ('/community', 'community',
             'Community'), ('/about', 'about', 'About'), 
-            ('/register', 'register', 'Register'), ('/login', 'login', 'Login'), ('/logout', 'logout', 'Logout')] -%} 
+            ('/logout', 'logout', 'Logout')] -%} 
+            {% else %}
+            {% set navbar_menus = [ ('/', 'home', 'Home'), ('/evidence',
+            'evidence', 'Evidence'), ('/activity',
+            'activity', 'Activity'), ('/community', 'community',
+            'Community'), ('/about', 'about', 'About'), 
+            ('/register', 'register', 'Register'), ('/login', 'login', 'Login')] -%} 
+            {% endif %}
             <!-- Set active page to style active menu automatically -->
             {% set active_page = active_page|default('home') -%} 
             {% for href, id, caption in navbar_menus %}
