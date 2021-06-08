@@ -5,6 +5,11 @@ from extensions import db, login_manager
 from models import User
 from routes.auth import auth
 from routes.main import main
+from routes.about import about_page
+from routes.activity import activity_page
+from routes.evidence import evidence_page
+from routes.community import community_page
+
 
 config_file = 'settings.py'
 app = Flask(__name__)
@@ -20,18 +25,10 @@ app.register_blueprint(main)
 app.register_blueprint(auth)
 
 app.cli.add_command(create_tables)
-
-from routes.about import about_page;
-app.register_blueprint(about_page);
-
-from routes.activity import activity_page;
-app.register_blueprint(activity_page);
-
-from routes.evidence import evidence_page;
-app.register_blueprint(evidence_page);
-
-from routes.community import community_page;
-app.register_blueprint(community_page);
+app.register_blueprint(about_page)
+app.register_blueprint(activity_page)
+app.register_blueprint(evidence_page)
+app.register_blueprint(community_page)
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
