@@ -28,7 +28,7 @@
             'evidence', 'Evidence'), ('/activity',
             'activity', 'Activity'), ('/community', 'community',
             'Community'), ('/about', 'about', 'About'), 
-            ('/register', 'register', 'Register'), ('/login', 'login', 'Login'), ('/logout', 'logout', 'Logout')] -%} 
+            ('/register', 'register', 'Register'), ('/login', 'login', 'Login')] -%} 
             <!-- Set active page to style active menu automatically -->
             {% set active_page = active_page|default('home') -%} 
             {% for href, id, caption in navbar_menus %}

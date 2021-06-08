@@ -14,7 +14,13 @@
     <div class = "card border-0">
         <div class="card-body">
             <h5 class="card-title"> {{content["Title"]}}</h5>
-            <p class="card-text">{{ content["Text"] }}</p>            
+            <p class="card-text">
+                <ul>
+                {% for item in content["Text"] %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+            </p>            
 
         </div>
 
