@@ -119,12 +119,34 @@ def default_activity_page():
         },
             {
             "Title": "Financial",
-            "Text": ""
+            "Text": ["The State of U.S. Financial Capability found that Americans are barely getting by " +
+            "financially. In fact, nearly a third of Americans are unable to pay for a $2,000 unplanned " +
+            "financial expense during the month.",
+            "Studies have shown a direct link between financial health and mental health, " +
+            "particularly showing increased depression and anxiety for those with high stress.",
+            "Data from surveys found that people with poor coping mechanisms tend to deal with stress " +
+            "through unhealthy behaviors such as overeating, skipping meals, drinking alcohol and smoking.",
+            "The Employer’s Guide to Financial Wellness found that stress costs businesses $500 billion " +
+            "per year, which equates to $2800 per employee."
+            ]
 
         },
         {
             "Title": "Spiritual",
-            "Text": ""
+            "Text": ["Theorists as early as William James have hypothesized that an individual’s spiritual " +
+            "practices can influence physiological as well as psychological wellbeing.",
+            "A meta-analysis of over 40 independent samples reported that religious involvement is " +
+            "significantly and positively associated with longevity (McCullough, Hoyt, Larson, Koenig, & " +
+            "Thoresen, 2000). People live longer, have more satisfying, meaningful lives, and have lower " +
+            "rates of depressive states.",
+            "A study on Mindfulness-Based Stress Reduction showed improvement in overall life satisfaction " +
+            "and physical and mental health (Greeson et al., 2011).",
+            "By becoming more mindful, a correlation with Gestalt psychology was noted, as a basis for " +
+            "reducing depressive thoughts in real time.",
+            "Lowering blood pressure and hypertensive levels has been shown as a benefit of spirituality. " +
+            "A study on the effects of Transactional Psychophysiological Therapy showed a significant " +
+            "impact on patients who participated (Thomas, 1989). "
+            ]
 
         },
         {
