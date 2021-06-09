@@ -83,20 +83,38 @@ def default_activity_page():
 
 
         },
-            {
-            "Title": "Occupational",
-            "Text": ""
-
-        },
         {
             "Title": "Intellectual",
-            "Text": ""
+            "Text": ["Intellectual wellness connotes active engagement in learning, creating, and " +
+            "integrating information and experiences.",
+            "Support your brain's optimal functioning",
+            "Signs of intellectual wellness: curiosity, openness, critical thinking, learning skills",
+            "The brain can modify itself and adapt to new information and experiences",
+            "Stress is a natural part of life.  We experience stress in varying degrees daily.  " +
+            "Getting a handle on stress helps to create balance.",
+            "Knowing and practicing a variety of effective time management strategies can help you " +
+            "use your time wisely and feel less stressed by having so much to do."
+            ]
 
         }
         ,
             {
             "Title": "Environment",
-            "Text": ""
+            "Text": ["Taking small steps to make your environments safer and limiting your exposure " +
+            "to potentially harmful substances can help keep you healthier.",
+            "Our surroundings and how they influence our choices form the foundation for a healthy " +
+            "lifestyle.",
+            "It’s estimated that healthcare services account for just 10&#37; of longevity, while " +
+            "social and environmental factors account for twice that at 20&#37;, genetics 30&#37;, and " +
+            "individual behaviors an estimated 40&#37; (Schroeder, NEJM, 2007).",
+            "Being in a high-stress environment such as on a highly-trafficked street will cause the " +
+            "brain to signal production of cortisol by the adrenal glands. Elevated cortisol interferes " +
+            "with learning and memory, weakens immune function and bone density, and increases weight " +
+            "gain, blood pressure and heart disease(Franke, Children, 2014).",
+            "Memory and attention spans also benefit from time in nature, with University of Michigan " +
+            "psychology researchers pointing to a 20&#37; improvement after spending an hour " +
+            "interacting with nature",
+            ]
 
         },
             {
@@ -107,6 +125,20 @@ def default_activity_page():
         {
             "Title": "Spiritual",
             "Text": ""
+
+        },
+        {
+            "Title": "Occupational",
+            "Text": ["Achieving personal satisfaction and fulfillment in one’s work deepens our sense of " +
+            "meaning, purpose, worth, and value.",
+            "Occupational wellness is connected to other dimensions of wellness and to the " +
+            "overall level of wellness someone experiences.",
+            "Having a satisfying work life positively impacts physical, mental and emotional wellness.",
+            "Engaging in professional development enhances intellectual wellness.",
+            "Working collaboratively with coworkers and practicing conflict resolution develops " +
+            "social wellness.",
+            "Securing work that offers good pay enriches financial wellness."
+            ]
 
         }
         ]
