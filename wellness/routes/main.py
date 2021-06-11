@@ -27,7 +27,7 @@ def home():
             "the entirety of a person, like New Thought, Christian Science, and Lebensreform.The term " + 
             "wellness has also been misused for pseudoscientific health interventions.[4]",
             "imagePath": url_for('static', filename='/images/Eight_Dimensions_of_Wellness.png'),
-            "Link": "/styletransfer",
+            "Link": "/evidence",
             "Action": "+ The science behind it"
         },
 
