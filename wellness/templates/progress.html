@@ -1,0 +1,27 @@
+<!-- Extend base.html to inherit basic layout: navbar, footer -->
+{% extends "base.html" %}
+<!-- Set active_page, such that current menu is active automatically without hard code -->
+{% set active_page = "progress" %}
+<!-- Set title, template will read title for each html page -->
+{% block title %} {{title}} {% endblock %}
+
+<!-- Each page will render differently according to the data to be displayed. -->
+{% block content %}
+<div class = "container">
+    
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOK55p1dhOA8azzcOKztof7OEtjHREoxp9wDanO59EFZBBQA/viewform?embedded=true" 
+            width="100%" 
+            height="1100" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">Loading…</iframe>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9cUYibm4EazxxHQJOo6C4rMeQCqjaDMH9dLksDgrgKQkHXA/viewform?embedded=true" 
+            width="100%" 
+            height="1100" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">Loading…</iframe>
+</div>
+{% endblock %}

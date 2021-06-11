@@ -9,6 +9,7 @@ from routes.about import about_page
 from routes.activity import activity_page
 from routes.evidence import evidence_page
 from routes.community import community_page
+from routes.progress import progress_page
 
 
 config_file = 'settings.py'
@@ -29,6 +30,7 @@ app.register_blueprint(about_page)
 app.register_blueprint(activity_page)
 app.register_blueprint(evidence_page)
 app.register_blueprint(community_page)
+app.register_blueprint(progress_page)
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
