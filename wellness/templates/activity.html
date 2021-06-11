@@ -8,18 +8,32 @@
 <!-- Each page will render differently according to the data to be displayed. -->
 {% block content %}
 <div class = "container">
-
     <!-- Try to seperate content from html: write webpage content in aboutPageContents -->
-    {% for content in activityPageContents %}
-    <div class = "card border-0">
-        <div class="card-body">
-            <h5 class="card-title"> {{content["Title"]}}</h5>
-            <p class="card-text">{{ content["Text"] }}</p>            
-
+   <h2>Activities Pool</h2>
+   <hr>
+    <div class = "row">
+        {% for content in activityPageContents %}
+        <div class="col-lg-4 col-md-6 col-12">
+            <h5 class = "card-title">{{ content["Title"] }}</h5>
+            <div class = "card-body">
+                <ol>
+                    {% for dict_item in content.Activities %}
+                    {% for key,value in dict_item.items() %}
+                        <li>{{key}}:{{value}}</li>
+                    {% endfor %}
+                    {% endfor %}
+                </ol>
+            </div>
+        
+        
         </div>
-
+        {% endfor %}
     </div>
+    <h2>Activities Template</h2>
     <hr>
-    {% endfor %}
+    <h2>Create Your Own Wellness Plan</h2>
+    <hr>
+    <h2>Self Assessment</h2>
+    <hr>
 </div>
 {% endblock %}
